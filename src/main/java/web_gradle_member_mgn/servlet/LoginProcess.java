@@ -27,7 +27,7 @@ public class LoginProcess extends HttpServlet {
 		Member result = service.loginMember(loginMember);
 		
 		System.out.printf("loginMember : %s %n result : %s%n", loginMember, result);
-		if (result != null) {
+		if (result != null && result.getId().equals("admin")) {
 			HttpSession session = request.getSession();
 			session.setAttribute("member", result);
 			request.getRequestDispatcher("admin/main.jsp").forward(request, response);
