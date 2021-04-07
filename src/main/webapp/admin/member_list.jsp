@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<c:set var="id" value="${member.id }" />
+<%-- <c:set var="id" value="${member.id }" />
 <c:if test="${id eq null }">
 	<c:redirect url="loginForm.jsp"/>
 </c:if>
-
+ --%>
 <html>
 <head>
 <title>회원관리 시스템 관리자모드(회원 목록 보기)</title>

@@ -10,6 +10,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 
@@ -26,8 +27,7 @@ public class LoginCheckFilter implements Filter {
 		if (session != null & session.getAttribute("member") != null) {
 			chain.doFilter(request, response);
 		}else {
-			RequestDispatcher dispatcher = request.getRequestDispatcher("loginForm.jsp");
-			dispatcher.forward(request, response);
+			((HttpServletResponse)response).sendRedirect(httpRequest.getContextPath()+"/loginForm.jsp");
 		}
 		
 	}
